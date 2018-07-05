@@ -41,7 +41,7 @@ public class KategoriService {
         }
         else
         {
-            return "bu ıd mevcut degil";
+            return "bu id mevcut degil";
         }
 
 
