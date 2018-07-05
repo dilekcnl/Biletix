@@ -26,7 +26,7 @@ public class Sehir {
     /*@OneToMany(mappedBy = "sehir")
     List<Mekan> mekanlistesi;
 
-    @JoinTable(name = "kategori",joinColumns = {@JoinColumn(name = "MEKAN_ID",referencedColumnName = "mekanId")},
+   // @JoinTable(name = "kategori",joinColumns = {@JoinColumn(name = "MEKAN_ID",referencedColumnName = "mekanId")},
             inverseJoinColumns = {@JoinColumn(name = "ETKINLIK_ID",referencedColumnName = "etkinlikId")})
     @ManyToMany(fetch = FetchType.EAGER)
     List<Kategori> kategoriListesi;*/
