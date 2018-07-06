@@ -1,5 +1,6 @@
 package com.example.biletix.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -11,11 +12,11 @@ import java.util.List;
 public class Bilet {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long biletId;
-    Long biletFiyati;
+    private Long biletId;
+    private Long biletFiyati;
 
+    @JsonBackReference
     @ManyToOne
-    @JoinColumn(name = "etkinlik")
     Etkinlik etkinlik;
 
 }

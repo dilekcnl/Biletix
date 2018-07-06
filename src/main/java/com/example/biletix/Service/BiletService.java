@@ -29,12 +29,12 @@ public class BiletService {
         biletRepository.save(bilet);
     }
 
-   /* public String updateBilet(Long biletId,String biletAd)
+   public String updateBilet(Long biletId)
         {
             Bilet bilet=biletRepository.findOne(biletId);
             if (bilet !=null)
             {
-                bilet.setBiletAd(biletAd);
+                //bilet.setBiletAd(biletAd);
                 biletRepository.save(bilet);
                 return "Guncellendi";
             }
@@ -43,7 +43,7 @@ public class BiletService {
                 return "bu ıd mevcut degil";
             }
 
-    }*/
+    }
 
     public void biletSilId(Long biletId)
     {

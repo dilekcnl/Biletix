@@ -2,6 +2,7 @@ package com.example.biletix.Model;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,9 +18,9 @@ public class Kategori {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long kategoriId;
 
-    String kategoriAd;
+    private String kategoriAd;
 
-
+    @JsonBackReference
     @ManyToMany(mappedBy = "kategoriListesi")
     List<Sehir> sehirListesi;
 

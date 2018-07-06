@@ -42,7 +42,7 @@ public class EtkinlikController {
         return HttpStatus.OK;
     }
 
-    @RequestMapping(path ="/save", method = RequestMethod.POST,consumes = "application/json" )
+    @RequestMapping(path ="/saveEtkinlik", method = RequestMethod.POST,consumes = "application/json" )
     public @ResponseBody HttpStatus saveEtkinlik(@RequestBody Etkinlik etkinlik)
     {
         try {
@@ -55,7 +55,7 @@ public class EtkinlikController {
         return  HttpStatus.OK;
     }
 
-    @RequestMapping(path ="/update/{etkinlikId}/{etkinlikAd}" , method = RequestMethod.PUT )
+    @RequestMapping(path ="/updateEtkinlik/{etkinlikId}/{etkinlikAd}" , method = RequestMethod.PUT )
     public @ResponseBody HttpStatus updateEtkinlik(@PathVariable Long etkinlikId, @PathVariable String etkinlikAd)
     {
         try {

@@ -1,5 +1,6 @@
 package com.example.biletix.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 import org.hibernate.engine.profile.Fetch;
 
@@ -12,13 +13,13 @@ import java.util.List;
 public class Sehir {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long sehirId;
-    String sehirAd;
+    private Long sehirId;
+    private String sehirAd;
 
-    @JoinTable(name = "kategoriSehri",joinColumns = {@JoinColumn(name = "SEHIR_ID ",referencedColumnName = "sehirId")},
-            inverseJoinColumns = {@JoinColumn(name = "KATEGORI_ID",referencedColumnName = "kategoriId")})
-    @ManyToMany(fetch = FetchType.EAGER)
+
+    @ManyToMany
     List<Kategori> kategoriListesi;
+
 
     @OneToMany(mappedBy = "sehir")
     List<Mekan> mekanlistesi;

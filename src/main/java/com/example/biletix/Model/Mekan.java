@@ -1,5 +1,6 @@
 package com.example.biletix.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -11,11 +12,11 @@ import java.util.List;
 public class Mekan {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long mekanId;
-    String mekanAd;
+    private Long mekanId;
+    private String mekanAd;
 
+    @JsonBackReference
     @ManyToOne
-    @JoinColumn(name = "sehir")
     Sehir sehir;
 
 

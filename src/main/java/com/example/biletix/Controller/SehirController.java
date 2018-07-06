@@ -42,7 +42,7 @@ public class SehirController {
         return HttpStatus.OK;
     }
 
-    @RequestMapping(path ="/save", method = RequestMethod.POST,consumes = "application/json" )
+    @RequestMapping(path ="/saveSehir", method = RequestMethod.POST,consumes = "application/json" )
     public @ResponseBody HttpStatus saveSehir(@RequestBody Sehir sehir)
     {
         try {

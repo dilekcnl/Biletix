@@ -42,7 +42,7 @@ public class BiletController {
         return HttpStatus.OK;
     }
 
-    @RequestMapping(path ="/save", method = RequestMethod.POST,consumes = "application/json" )
+    @RequestMapping(path ="/saveBilet", method = RequestMethod.POST,consumes = "application/json" )
     public @ResponseBody HttpStatus saveBilet(@RequestBody Bilet bilet)
     {
         try {
@@ -55,18 +55,17 @@ public class BiletController {
         return  HttpStatus.OK;
     }
 
-    /*@RequestMapping(path ="/update/{biletId}/{biletAd}" , method = RequestMethod.PUT )
-    public @ResponseBody HttpStatus updateBilet(@PathVariable Long biletId, @PathVariable String biletAd)
+    @RequestMapping(path ="/updateBilet/{biletId}" , method = RequestMethod.PUT )
+    public @ResponseBody HttpStatus updateBilet(@PathVariable Long biletId)
     {
         try {
-            biletService.updateBilet(biletId,biletAd);
+            biletService.updateBilet(biletId);
         }catch (Exception e)
         {
 
         }
-
         return  HttpStatus.OK;
-    }*/
+    }
 
 
 

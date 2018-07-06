@@ -42,7 +42,7 @@ public class KategoriController {
         return HttpStatus.OK;
     }
 
-    @RequestMapping(path ="/save", method = RequestMethod.POST,consumes = "application/json" )
+    @RequestMapping(path ="/saveKategori", method = RequestMethod.POST,consumes = "application/json" )
     public @ResponseBody HttpStatus saveKategori(@RequestBody Kategori kategori)
     {
         try {

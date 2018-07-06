@@ -1,5 +1,6 @@
 package com.example.biletix.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -13,18 +14,19 @@ import java.util.List;
 public class Etkinlik {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long etkinlikId;
-    String etkinlikAd;
-    Date etkinlikTrh;
-    Time etkinlikSaat;
+    private Long etkinlikId;
+    private String etkinlikAd;
+    private Date etkinlikTrh;
+    private Time etkinlikSaat;
 
-    @JoinTable(name = "etkinlikMekani",joinColumns = {@JoinColumn(name = "ETKINLIK_ID",referencedColumnName = "etkinlikId")},
-            inverseJoinColumns = {@JoinColumn(name = "MEKAN_ID ",referencedColumnName = "mekanId")})
-    @ManyToMany(fetch = FetchType.EAGER)
+
+    @JsonBackReference
+    @ManyToMany
     List<Mekan> mekanListesi;
 
-    @OneToMany(mappedBy = "etkinlik")
-    List<Bilet> biletListesi;
+
+//    @OneToMany(mappedBy = "etkinlik")
+//    List<Bilet> biletListesi;
 
    /* @ManyToOne
     @JoinColumn(name = "kategori")
