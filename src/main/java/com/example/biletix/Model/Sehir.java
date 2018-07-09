@@ -20,7 +20,7 @@ public class Sehir {
     @ManyToMany
     List<Kategori> kategoriListesi;
 
-
+    @JsonBackReference
     @OneToMany(mappedBy = "sehir")
     List<Mekan> mekanlistesi;
 

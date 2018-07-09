@@ -19,22 +19,11 @@ public class Etkinlik {
     private Date etkinlikTrh;
     private Time etkinlikSaat;
 
-
-    @JsonBackReference
     @ManyToMany
     List<Mekan> mekanListesi;
 
-
-//    @OneToMany(mappedBy = "etkinlik")
-//    List<Bilet> biletListesi;
-
-   /* @ManyToOne
-    @JoinColumn(name = "kategori")
-    Kategori kategori;
-
-    @OneToMany(mappedBy = "etkinlik")
+    @JsonBackReference
+   @OneToMany(mappedBy = "etkinlik")
     List<Bilet> biletListesi;
 
-    @ManyToMany(mappedBy = "etkinlikListesi")
-    List<Mekan> mekanListesi; */
 }

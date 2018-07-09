@@ -15,16 +15,11 @@ public class Mekan {
     private Long mekanId;
     private String mekanAd;
 
-    @JsonBackReference
     @ManyToOne
     Sehir sehir;
 
-
+    @JsonBackReference
     @ManyToMany(mappedBy = "mekanListesi")
     List<Etkinlik> etkinlikListesi;
 
-    /*@JoinTable(name = "etkinlikMekani",joinColumns = {@JoinColumn(name = "MEKAN_ID",referencedColumnName = "mekanId")},
-            inverseJoinColumns = {@JoinColumn(name = "ETKINLIK_ID",referencedColumnName = "etkinlikId")})
-    @ManyToMany(fetch = FetchType.EAGER)
-    List<Etkinlik> etkinlikListesi;*/
 }

@@ -15,7 +15,7 @@ public class Bilet {
     private Long biletId;
     private Long biletFiyati;
 
-    @JsonBackReference
+
     @ManyToOne
     Etkinlik etkinlik;
 
