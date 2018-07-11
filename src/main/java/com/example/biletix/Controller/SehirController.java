@@ -1,6 +1,7 @@
 package com.example.biletix.Controller;
 
 
+import com.example.biletix.Model.Kategori;
 import com.example.biletix.Model.Sehir;
 import com.example.biletix.Service.SehirService;
 import org.springframework.beans.factory.annotation.Autowired;

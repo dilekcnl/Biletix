@@ -20,9 +20,9 @@ public class Kategori {
 
     private String kategoriAd;
 
-    @JsonBackReference
+   /* @JsonBackReference
     @ManyToMany(mappedBy = "kategoriListesi")
-    List<Sehir> sehirListesi;
+    List<Sehir> sehirListesi;*/
 
 
     /*@OneToMany(mappedBy = "kategori")

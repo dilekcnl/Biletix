@@ -17,8 +17,8 @@ public class Sehir {
     private String sehirAd;
 
 
-    @ManyToMany
-    List<Kategori> kategoriListesi;
+   /* @ManyToMany
+    List<Kategori> kategoriListesi;*/
 
     @JsonBackReference
     @OneToMany(mappedBy = "sehir")
