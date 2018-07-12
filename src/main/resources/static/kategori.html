@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<script src=" angular/angular-1.7.2/angular.min.js"></script>
+<script src=" angular/angular-1.7.2/angular-resource.min.js"></script>
+<script src="kategori.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+
+
+<body>
+<div ng-init="pageOpen()" ng-app="biletix" ng-controller="KategoriController" class="container">
+    <div class="form-group">
+        <label for="kategoriAd"> Adı </label>
+        <input type="text" class="form-control" id="kategoriAd" ng-model="kategori.kategoriAd" placeholder="Kategori Ad">
+    </div>
+    <button type="button" class="btn btn-primary" ng-click="save()">KAYDET</button>
+    <h2>Kategori</h2>
+    <table class="table">
+        <thead>
+        <tr >
+            <th>Kategori Ad</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="kategori in kategoriList">
+            <td>{{kategori.kategoriAd}}</td>
+            <td> <button type="button" class="btn btn-primary" ng-click="selectKategori(kategori)">GÜNCELLE</button> </td>
+            <td> <button type="button" class="btn btn-danger" ng-click="deleteKategori(kategori)">SİL</button> </td>
+        </tr>
+        </tbody>
+    </table>
+
+
+
+</div>
+
+
+</body>
+</html>
+
+
+

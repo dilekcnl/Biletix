@@ -47,9 +47,9 @@ public class KategoriService {
 
     }
 
-    public void kategoriSilId(Long kategoriId)
+    public void kategoriSilId(Kategori kategori)
     {
-        kategoriRepository.delete(kategoriId);
+        kategoriRepository.delete(kategori);
     }
 
 

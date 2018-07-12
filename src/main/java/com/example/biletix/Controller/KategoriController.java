@@ -29,11 +29,11 @@ public class KategoriController {
         return kategoriService.kategoriGetirId(kategoriId);
     }
 
-    @RequestMapping(path = "/kategoriSilId/{kategoriId}",method = RequestMethod.DELETE)
-    public @ResponseBody HttpStatus kategoriSilId(@PathVariable Long kategoriId)
+    @RequestMapping(path = "/kategoriSil",method = RequestMethod.POST)
+    public @ResponseBody HttpStatus kategoriSilId(@RequestBody Kategori kategori)
     {
         try {
-            kategoriService.kategoriSilId(kategoriId);
+            kategoriService.kategoriSilId(kategori);
         }catch (Exception e)
         {
 

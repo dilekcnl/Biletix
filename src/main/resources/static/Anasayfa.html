@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<script src=" angular/angular-1.7.2/angular.min.js"></script>
+<script src=" angular/angular-1.7.2/angular-resource.min.js"></script>
+<script src="Anasayfa.js"></script>
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+
+        footer {
+            background-color: #f2f2f2;
+            padding: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Giriş</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="jumbotron">
+    <div class="container text-center">
+        <h1>Biletix</h1>
+    </div>
+</div>
+
+
+<form ng-hide="hideform" >
+    <div class="col-md-2">
+    <label>Ad:</label>
+    <input class="w3-input w3-border" type="text" ng-model="ad" ng-disabled="!edit" placeholder="Ad">
+    <br>
+    <label>Soyad:</label>
+    <input class="w3-input w3-border" type="text" ng-model="soyad" ng-disabled="!edit" placeholder="Soyad">
+    <br>
+    <label>Telefon:</label>
+    <input class="w3-input w3-border" type="text" ng-model="tel" ng-disabled="!edit" placeholder="Telefon">
+    <br>
+    </div>
+</form>
+<div ng-init="pageOpen()" ng-app="biletix" ng-controller="KategoriController">
+<form>
+    <div class="col-md-2">
+    <thead>
+    <tr>
+        <th> Kategori</th>
+    </tr>
+    </thead>
+    <select ng-model="kategori" ng-options="x as x.kategoriAd for x in kategoriList">
+    </select>
+    </div>
+
+    <div class="col-md-2">
+    <thead>
+    <tr>
+        <th> Sehir</th>
+    </tr>
+    </thead>
+    <select ng-model="sehir" ng-options="x as x.sehirAd for x in sehirList">
+    </select>
+    </div>
+
+    <div class="col-md-2">
+        <thead>
+        <tr>
+            <th> Mekan</th>
+        </tr>
+        </thead>
+        <select ng-model="mekan" ng-options="x as x.mekanAd for x in mekanList">
+        </select>
+    </div>
+
+    <div class="col-md-2">
+        <thead>
+        <tr>
+            <th> Etkinlik</th>
+        </tr>
+        </thead>
+
+        <select ng-model="etkinlik" ng-options="x as x.etkinlikAd for x in etkinlikList">
+        </select>
+        <select ng-model="etkinlik" ng-options="x as x.etkinlikTrh for x in etkinlikList">
+        </select>
+        <select ng-model="etkinlik" ng-options="x as x.etkinlikSaat for x in etkinlikList">
+        </select>
+
+    </div>
+
+    <button class="w3-btn w3-green w3-ripple" ng-click="Satın Al('new')">&#9998; Satın Al</button>
+
+
+
+   <!-- <table>
+        <thead>
+        <tr>
+        <th> Kategori</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr  ng-repeat="kategori in kategoriList">
+        <td> {{kategori.kategoriAd}} </td>
+        </tr>
+        </tbody>
+    </table>-->
+</form>
+</div>
+</body>
+</html>
