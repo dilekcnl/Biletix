@@ -24,7 +24,7 @@ public class MekanController {
         return mekanService.mekanGetir();
     }
     @RequestMapping(path = "/mekanGetirId/{mekanId}",method = RequestMethod.GET)
-    public @ResponseBody Mekan mekanGetirId(@PathVariable Long mekanId)
+    public @ResponseBody List<Mekan> mekanGetirId(@PathVariable Long mekanId)
     {
         return mekanService.mekanGetirId(mekanId);
     }

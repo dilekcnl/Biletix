@@ -11,7 +11,7 @@ import java.util.List;
 public interface MekanRepository  extends CrudRepository<Mekan,Long> {
 
     List<Mekan> findAll();
-    Mekan findMekanByMekanId(@Param("mekanId") Long mekanId);
+    List<Mekan> findObjectBySehirSehirId(@Param("mekanId") Long mekanId);
 
 
 

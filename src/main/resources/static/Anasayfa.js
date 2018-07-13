@@ -1,15 +1,17 @@
-
 var myApp = angular.module('biletix',[])
-    .controller('KategoriController',function ($scope, $http) {
+    .controller('Anasayfa',function ($scope, $http) {
 
-        $scope.kategori={};//angularjs model
+        $scope.sehir = {};//angularjs model
         $scope.kategoriList=[];
+        $scope.mekanList=[];
+
 
     $scope.pageOpen=function () {
         $scope.kategoriGetir();
         $scope.sehirGetir();
-        $scope.mekanGetir();
-        $scope.etkinlikGetir();
+        //$scope.mekanGetir();
+        //$scope.etkinlikGetir();
+        // $scope.mekanGetirr();
 
     }
         $scope.kategoriGetir=function () {
@@ -42,6 +44,15 @@ var myApp = angular.module('biletix',[])
             var res=$http.get('api/etkinlik/etkinlikGetir');
             res.then(function (response) {
                 $scope.etkinlikList=response.data;
+
+            });
+
+        }
+
+        $scope.mekanGetirr=function () {
+            var res=$http.get('/api/mekan/mekanGetirId/' +$scope.sehir.sehirId);
+            res.then(function (response) {
+                $scope.mekanList=response.data;
 
             });
 

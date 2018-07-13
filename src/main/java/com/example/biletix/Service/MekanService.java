@@ -20,9 +20,9 @@ public class MekanService {
         return mekanRepository.findAll();
 
     }
-    public Mekan mekanGetirId(Long mekanId)
+    public List<Mekan> mekanGetirId(Long mekanId)
     {
-        return mekanRepository.findMekanByMekanId(mekanId);
+        return mekanRepository.findObjectBySehirSehirId(mekanId);
     }
 
     public void saveMekan(Mekan mekan)
